@@ -3,9 +3,9 @@
 use strict;
 use warnings;
 
-use Test::More tests => 5;
+use Test::More tests => 4;
 
-BEGIN { use_ok('Class::C3::XS') }
+use Class::C3::XS;
 
 {
     package Proxy;

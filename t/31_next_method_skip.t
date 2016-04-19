@@ -3,9 +3,9 @@
 use strict;
 use warnings;
 
-use Test::More tests => 10;
+use Test::More tests => 9;
 
-BEGIN { use_ok('Class::C3::XS') }
+use Class::C3::XS;
 
 =pod
 
