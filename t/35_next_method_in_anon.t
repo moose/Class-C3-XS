@@ -29,7 +29,7 @@ anonymous subroutine.
 {
     package B;
     use base 'A';
-    
+
     sub foo {
       my $code = sub {
         return 'B::foo => ' . (shift)->next::method();

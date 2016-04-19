@@ -23,7 +23,7 @@ use Class::C3::XS;
     isa_ok($foo, 'Foo');
 
     can_ok($foo, 'bar');
-    is($foo->bar(), 'Foo::bar', '... got the right return value');    
+    is($foo->bar(), 'Foo::bar', '... got the right return value');
 
     # fail calling it from a subclass
 
@@ -32,17 +32,17 @@ use Class::C3::XS;
         use strict;
         use warnings;
         our @ISA = ('Foo');
-    }  
-    
+    }
+
     my $bar = Bar->new();
     isa_ok($bar, 'Bar');
-    isa_ok($bar, 'Foo');    
-    
+    isa_ok($bar, 'Foo');
+
     # test it working with with Sub::Name
-    SKIP: {    
+    SKIP: {
         eval 'use Sub::Name';
         skip "Sub::Name is required for this test", 3 if $@;
-    
+
         my $m = sub { (shift)->next::method() };
         Sub::Name::subname('Bar::bar', $m);
         {
@@ -55,19 +55,19 @@ use Class::C3::XS;
         ok(!$@, '... calling bar() succedded') || diag $@;
         is($value, 'Foo::bar', '... got the right return value too');
     }
-    
+
     # test it failing without Sub::Name
     {
         package Baz;
         use strict;
         use warnings;
         our @ISA = ('Foo');
-    }      
-    
+    }
+
     my $baz = Baz->new();
     isa_ok($baz, 'Baz');
-    isa_ok($baz, 'Foo');    
-    
+    isa_ok($baz, 'Foo');
+
     {
         my $m = sub { (shift)->next::method() };
         {
@@ -77,5 +77,5 @@ use Class::C3::XS;
 
         eval { $baz->bar() };
         ok($@, '... calling bar() with next::method failed') || diag $@;
-    }    
+    }
 }

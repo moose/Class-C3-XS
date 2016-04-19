@@ -25,7 +25,7 @@ This tests the use of an eval{} block to wrap a next::method call.
 {
     package B;
     use base 'A';
-    
+
     sub foo {
       eval {
         return 'B::foo => ' . (shift)->next::method();
@@ -37,8 +37,8 @@ This tests the use of an eval{} block to wrap a next::method call.
     }
 }
 
-like(B->foo, 
-   qr/^A::foo died/, 
+like(B->foo,
+   qr/^A::foo died/,
    'method resolved inside eval{}');
 
 

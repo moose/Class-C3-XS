@@ -53,22 +53,22 @@ Level 0                0 | A |
 {
     package Test::O;
     our @ISA = qw//;
-    
+
     package Test::F;
     use base 'Test::O';
-    
+
     package Test::E;
     use base 'Test::O';
-        
+
     package Test::D;
-    use base 'Test::O';    
-    
+    use base 'Test::O';
+
     package Test::C;
     use base ('Test::D', 'Test::F');
 
     package Test::B;
     use base ('Test::E', 'Test::D');
-        
+
     package Test::A;
     use base ('Test::B', 'Test::C');
 }
@@ -76,4 +76,4 @@ Level 0                0 | A |
 is_deeply(
     [ Class::C3::XS::calculateMRO('Test::A') ],
     [ qw(Test::A Test::B Test::E Test::C Test::D Test::F Test::O) ],
-    '... got the right MRO for Test::A');      
+    '... got the right MRO for Test::A');

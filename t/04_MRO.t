@@ -14,7 +14,7 @@ example taken from: L<http://gauss.gwydiondylan.org/books/drm/drm_50.html>
          Object
            ^
            |
-        LifeForm 
+        LifeForm
          ^    ^
         /      \
    Sentient    BiPedal
@@ -34,24 +34,24 @@ example taken from: L<http://gauss.gwydiondylan.org/books/drm/drm_50.html>
 =cut
 
 {
-    package Object;    
+    package Object;
     our @ISA = qw//;
-    
+
     package LifeForm;
     use base 'Object';
-    
+
     package Sentient;
     use base 'LifeForm';
-    
+
     package BiPedal;
     use base 'LifeForm';
-    
+
     package Intelligent;
     use base 'Sentient';
-    
+
     package Humanoid;
     use base 'BiPedal';
-    
+
     package Vulcan;
     use base ('Intelligent', 'Humanoid');
 }
@@ -59,4 +59,4 @@ example taken from: L<http://gauss.gwydiondylan.org/books/drm/drm_50.html>
 is_deeply(
     [ Class::C3::XS::calculateMRO('Vulcan') ],
     [ qw(Vulcan Intelligent Sentient Humanoid BiPedal LifeForm Object) ],
-    '... got the right MRO for the Vulcan Dylan Example');  
+    '... got the right MRO for the Vulcan Dylan Example');

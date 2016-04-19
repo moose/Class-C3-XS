@@ -29,7 +29,7 @@ This tests the classic diamond inheritence pattern.
 }
 {
     package Diamond_C;
-    use base 'Diamond_A';     
+    use base 'Diamond_A';
 }
 {
     package Diamond_D;

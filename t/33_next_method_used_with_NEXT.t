@@ -17,31 +17,31 @@ use Class::C3::XS;
     package Foo;
     use strict;
     use warnings;
-    
+
     sub foo { 'Foo::foo' }
-    
+
     package Fuz;
     use strict;
     use warnings;
     use base 'Foo';
 
     sub foo { 'Fuz::foo => ' . (shift)->next::method }
-        
+
     package Bar;
     use strict;
-    use warnings;    
+    use warnings;
     use base 'Foo';
 
     sub foo { 'Bar::foo => ' . (shift)->next::method }
-    
+
     package Baz;
     use strict;
-    use warnings;    
+    use warnings;
     require NEXT; # load this as late as possible so we can catch the test skip
 
     use base 'Bar', 'Fuz';
-    
-    sub foo { 'Baz::foo => ' . (shift)->NEXT::foo }    
+
+    sub foo { 'Baz::foo => ' . (shift)->NEXT::foo }
 }
 
 is(Foo->foo, 'Foo::foo', '... got the right value from Foo->foo');
