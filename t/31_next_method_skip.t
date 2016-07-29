@@ -7,7 +7,7 @@ use Class::C3::XS;
 
 =pod
 
-This tests the classic diamond inheritence pattern.
+This tests the classic diamond inheritance pattern.
 
    <A>
   /   \

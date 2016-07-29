@@ -28,7 +28,7 @@ L<Class::C3> test suite *after* this module is installed.
 This module won't do anything for you if you're running a
 version of L<Class::C3> older than 0.16.  (It's not a
 dependency because it would be circular with the optional
-dep from that package to this one).
+dependency from that package to this one).
 
 =cut
 
