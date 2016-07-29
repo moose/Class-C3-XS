@@ -1,4 +1,5 @@
 package Class::C3::XS;
+# ABSTRACT: XS speedups for Class::C3
 
 use 5.006_000;
 use strict;
@@ -7,10 +8,6 @@ use warnings;
 our $VERSION = '0.14';
 
 =pod
-
-=head1 NAME
-
-Class::C3::XS - XS speedups for Class::C3
 
 =head1 SYNOPSIS
 
@@ -33,21 +30,10 @@ version of L<Class::C3> older than 0.16.  (It's not a
 dependency because it would be circular with the optional
 dep from that package to this one).
 
-=head1 AUTHOR
-
-Brandon L. Black, E<lt>blblack@gmail.comE<gt>
-
-=head1 LICENSE
-
-This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself. 
-
 =cut
 
 require XSLoader;
 XSLoader::load('Class::C3::XS', $VERSION);
-
-$VERSION = eval $VERSION;
 
 package # hide me from PAUSE
     next;
