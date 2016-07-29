@@ -12,7 +12,7 @@ our $VERSION = '0.13';
 
 Class::C3::XS - XS speedups for Class::C3
 
-=head1 SUMMARY
+=head1 SYNOPSIS
 
   use Class::C3; # Automatically loads Class::C3::XS
                  #  if it's installed locally
