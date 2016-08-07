@@ -1,6 +1,6 @@
 Revision history for Class-C3-XS
 
-{{$NEXT}}
+0.14      2016-08-07 00:14:09Z
         - fix naming of test packages, now that . is no longer in @INC while
           base.pm is running. (RT#116566, perl RT#128769)
 
