@@ -8,7 +8,7 @@ Class::C3::XS - XS speedups for Class::C3
 
 =head1 VERSION
 
-version 0.14
+version 0.15
 
 =head1 SYNOPSIS
 
